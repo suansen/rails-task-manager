@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+<div class="border-bottom mb-3">
+  <ul></ul>
+    <% @tasks.each_with_index do |task, index| %>
+      <% if task.completed %>
+        <p><i class="far fa-check-square"></i> <%= link_to task.title, task_path(task), class:"td-none" %> <%= link_to task_path(task), method: :delete, class:"td-none", data: { confirm: "Are you sure?"} do%><i class="far fa-trash-alt"></i><% end %></p>
+      <% else %>
+        <p><i class="far fa-square"></i> <%= link_to task.title, task_path(task), class:"td-none" %> <%= link_to task_path(task), method: :delete, class:"td-none", data: { confirm: "Are you sure?"} do%><i class="far fa-trash-alt"></i><% end %></p>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to new_task_path, class:"td-none" do %><i class="fas fa-plus"></i> Add new task<% end %>
+</div>

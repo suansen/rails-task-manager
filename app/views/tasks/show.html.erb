@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-between">
+  <h1><%= @task.title %></h1>
+  <div>
+    <%= link_to edit_task_path(@task), class: "btn btn-primary td-none" do%>
+      <i class="far fa-edit"></i> <span>Edit task</span>
+    <% end %>
+  </div>
+</div>
+<div class="rounded px-3 py-3 grey"><%= @task.details %></div>
+<div class="py-3">
+  <% if @task.completed %>
+    <i class="far fa-check-square"></i>
+    <label>This task is completed.</label>
+  <% else %>
+    <i class="far fa-square"></i>
+    <label>This task is not completed yet.</label>
+  <% end %>
+</div>
+
+<div class="my-3 border-top pt-3">
+      <%= link_to tasks_path, class:"td-none" do%>
+      <i class="fas fa-undo blue small-text"></i> Back to list
+    <% end %>
+</div>

@@ -1,0 +1,14 @@
+<h1>New task</h1>
+
+<%= form_for(@task) do |f| %>
+  <div class="mb-2"><%= f.label :title %></div>
+  <div class="mb-2"><%= f.text_field :title, class:"w-100"%></div>
+  <div class="mb-2"><%= f.label :details %></div>
+  <div class="mb-2"><%= f.text_area :details, class:"w-100" %></div>
+  <%= f.submit value="Create Task", class:"btn btn-primary mt-2" %>
+<% end %>
+<div class="my-3 border-top pt-3">
+      <%= link_to tasks_path, class:"td-none" do%>
+      <i class="fas fa-undo blue small-text"></i> Back to list
+    <% end %>
+</div>
